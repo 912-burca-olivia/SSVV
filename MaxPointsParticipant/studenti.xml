@@ -4,9 +4,21 @@
         <Nume>New Name</Nume>
         <Grupa>932</Grupa>
     </student>
+    <student ID="12">
+        <Nume>Ana</Nume>
+        <Grupa>223</Grupa>
+    </student>
     <student ID="2">
         <Nume>Maria</Nume>
         <Grupa>222</Grupa>
+    </student>
+    <student ID="13">
+        <Nume>Ana</Nume>
+        <Grupa>223</Grupa>
+    </student>
+    <student ID="14">
+        <Nume>Ana</Nume>
+        <Grupa>223</Grupa>
     </student>
     <student ID="7">
         <Nume>name</Nume>

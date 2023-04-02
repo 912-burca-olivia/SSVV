@@ -56,8 +56,88 @@ public class AddStudentTest {
         assertTrue(thrown);
     }
 
+    @Test
+    public void testAddStudentId() {
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+
+        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+        service.saveStudent("13", "Ana", 223);
+        Student addedStudent = null;
+        for(Student student : service.findAllStudents()) {
+            if(student.getID().equals("13"))
+            {
+                addedStudent = student;
+                break;
+            }
+        }
+        assertEquals(addedStudent.getID(), "13");
+    }
+
+    @Test
+    public void testAddStudentWrongId() {
+        Student student = new Student("", "Ana", 221);
+        boolean thrown = false;
+        Validator<Student> studentValidator = new StudentValidator();
+        StudentXMLRepository studentFileRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
 
 
+        try {
+            Student result = studentFileRepo.save(student);
+            assertEquals(result, null);
+            studentValidator.validate(student);
+        } catch (ValidationException e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+
+    @Test
+    public void testAddStudentName() {
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+
+        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+        service.saveStudent("14", "Ana", 223);
+        Student addedStudent = null;
+        for(Student student : service.findAllStudents()) {
+            if(student.getID().equals("14"))
+            {
+                addedStudent = student;
+                break;
+            }
+        }
+        assertEquals(addedStudent.getNume(), "Ana");
+    }
+
+    @Test
+    public void testAddStudentWrongName() {
+        Student student = new Student("15", "", 221);
+        boolean thrown = false;
+        Validator<Student> studentValidator = new StudentValidator();
+        StudentXMLRepository studentFileRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
+
+
+        try {
+            Student result = studentFileRepo.save(student);
+            assertEquals(result, null);
+            studentValidator.validate(student);
+        } catch (ValidationException e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
 
 
 
