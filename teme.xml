@@ -20,4 +20,9 @@
         <Deadline>7</Deadline>
         <Startline>4</Startline>
     </tema>
+    <tema ID="10">
+        <Descriere>Tema</Descriere>
+        <Deadline>13</Deadline>
+        <Startline>2</Startline>
+    </tema>
 </Entitati>
