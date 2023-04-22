@@ -1,5 +1,6 @@
 package ssvv.example;
 
+import org.junit.Before;
 import org.junit.Test;
 import ssvv.example.domain.Nota;
 import ssvv.example.domain.Student;
@@ -14,19 +15,29 @@ import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AddStudentTest {
+    private StudentXMLRepository studentRepo;
+    private TemaXMLRepository assignmentRepo;
+    private NotaXMLRepository gradeRepo;
+    private Service service;
 
-    @Test
-    public void testAddStudentGroup() {
+    @Before
+    public void setUp() {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
         Validator<Nota> notaValidator = new NotaValidator();
 
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+        studentRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
+        assignmentRepo = new TemaXMLRepository(temaValidator, "teme.xml");
+        gradeRepo = new NotaXMLRepository(notaValidator, "note.xml");
 
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        service.saveStudent("12", "Ana", 223);
+        service = new Service(studentRepo, assignmentRepo, gradeRepo);
+    }
+
+    @Test
+    public void testAddStudentValid() {
+
+        int result = service.saveStudent("12", "Ana", 223);
+        assertEquals(result , 0);
         Student addedStudent = null;
         for(Student student : service.findAllStudents()) {
             if(student.getID().equals("12"))
@@ -36,107 +47,27 @@ public class AddStudentTest {
             }
         }
         assertEquals(addedStudent.getGrupa(), 223);
+        assertEquals(addedStudent.getID(), "12");
+        assertEquals(addedStudent.getNume(),"Ana");
     }
 
     @Test
     public void testAddStudentWrongGroup() {
-        Student student = new Student("11", "Ana", 1000);
-        boolean thrown = false;
-        Validator<Student> studentValidator = new StudentValidator();
-        StudentXMLRepository studentFileRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
-
-
-        try {
-            Student result = studentFileRepo.save(student);
-            assertEquals(result, null);
-            studentValidator.validate(student);
-        } catch (ValidationException e) {
-            thrown = true;
-        }
-        assertTrue(thrown);
-    }
-
-    @Test
-    public void testAddStudentId() {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        service.saveStudent("13", "Ana", 223);
-        Student addedStudent = null;
-        for(Student student : service.findAllStudents()) {
-            if(student.getID().equals("13"))
-            {
-                addedStudent = student;
-                break;
-            }
-        }
-        assertEquals(addedStudent.getID(), "13");
+        int result = service.saveStudent("11", "Ana", 1000);
+        assertEquals(result, 1);
     }
 
     @Test
     public void testAddStudentWrongId() {
-        Student student = new Student("", "Ana", 221);
-        boolean thrown = false;
-        Validator<Student> studentValidator = new StudentValidator();
-        StudentXMLRepository studentFileRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
-
-
-        try {
-            Student result = studentFileRepo.save(student);
-            assertEquals(result, null);
-            studentValidator.validate(student);
-        } catch (ValidationException e) {
-            thrown = true;
-        }
-        assertTrue(thrown);
+        int result = service.saveStudent("", "Ana", 221);
+        assertEquals(result, 1);
     }
 
-
-    @Test
-    public void testAddStudentName() {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        service.saveStudent("14", "Ana", 223);
-        Student addedStudent = null;
-        for(Student student : service.findAllStudents()) {
-            if(student.getID().equals("14"))
-            {
-                addedStudent = student;
-                break;
-            }
-        }
-        assertEquals(addedStudent.getNume(), "Ana");
-    }
 
     @Test
     public void testAddStudentWrongName() {
-        Student student = new Student("15", "", 221);
-        boolean thrown = false;
-        Validator<Student> studentValidator = new StudentValidator();
-        StudentXMLRepository studentFileRepo = new StudentXMLRepository(studentValidator, "studenti.xml");
-
-
-        try {
-            Student result = studentFileRepo.save(student);
-            assertEquals(result, null);
-            studentValidator.validate(student);
-        } catch (ValidationException e) {
-            thrown = true;
-        }
-        assertTrue(thrown);
+        int result = service.saveStudent("15", "", 221);
+        assertEquals(result, 1);
     }
 
 
