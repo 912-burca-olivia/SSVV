@@ -25,6 +25,11 @@
         <SaptamanaPredare>8</SaptamanaPredare>
         <Feedback>Ok</Feedback>
     </nota>
+    <nota IDStudent="4001" IDTema="4001">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>Ok</Feedback>
+    </nota>
     <nota IDStudent="14" IDTema="99">
         <Nota>9.0</Nota>
         <SaptamanaPredare>13</SaptamanaPredare>

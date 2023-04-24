@@ -16,7 +16,7 @@ import ssvv.example.validation.Validator;
 
 import static org.junit.Assert.assertEquals;
 
-public class LevelsOfTestingTests {
+public class LevelsOfTestingTest {
     private StudentXMLRepository studentRepo;
     private TemaXMLRepository assignmentRepo;
     private NotaXMLRepository gradeRepo;
@@ -52,9 +52,9 @@ public class LevelsOfTestingTests {
 
     @Test
     public void testBigBang() {
-        assertEquals(service.saveStudent("4001", "Mihai", 222), 1);
-        assertEquals(service.saveTema("4001", "Tema", 8, 7), 1);
-        assertEquals(service.saveNota("4001", "4001", 9, 8, "Ok"), 1);
+        assertEquals(service.saveStudent("4002", "Mihai", 222), 1);
+        assertEquals(service.saveTema("4002", "Tema", 8, 7), 1);
+        assertEquals(service.saveNota("4002", "4002", 9, 8, "Ok"), 1);
     }
 
 
