@@ -5,6 +5,11 @@
         <SaptamanaPredare>7</SaptamanaPredare>
         <Feedback>Good</Feedback>
     </nota>
+    <nota IDStudent="14" IDTema="13">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>13</SaptamanaPredare>
+        <Feedback>Ok</Feedback>
+    </nota>
     <nota IDStudent="1" IDTema="1">
         <Nota>10.0</Nota>
         <SaptamanaPredare>7</SaptamanaPredare>
@@ -14,5 +19,15 @@
         <Nota>7.5</Nota>
         <SaptamanaPredare>9</SaptamanaPredare>
         <Feedback>done</Feedback>
+    </nota>
+    <nota IDStudent="4000" IDTema="4000">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>Ok</Feedback>
+    </nota>
+    <nota IDStudent="14" IDTema="99">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>13</SaptamanaPredare>
+        <Feedback>Ok</Feedback>
     </nota>
 </Entitati>

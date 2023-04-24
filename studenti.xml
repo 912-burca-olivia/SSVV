@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Entitati>
-    <student ID="1">
-        <Nume>New Name</Nume>
-        <Grupa>932</Grupa>
-    </student>
     <student ID="12">
         <Nume>Ana</Nume>
         <Grupa>223</Grupa>
-    </student>
-    <student ID="2">
-        <Nume>Maria</Nume>
-        <Grupa>222</Grupa>
     </student>
     <student ID="13">
         <Nume>Ana</Nume>
@@ -19,6 +11,42 @@
     <student ID="14">
         <Nume>Ana</Nume>
         <Grupa>223</Grupa>
+    </student>
+    <student ID="15">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="4000">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="16">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="17">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="1000">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="2000">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="3000">
+        <Nume>Mihai</Nume>
+        <Grupa>222</Grupa>
+    </student>
+    <student ID="1">
+        <Nume>New Name</Nume>
+        <Grupa>932</Grupa>
+    </student>
+    <student ID="2">
+        <Nume>Maria</Nume>
+        <Grupa>222</Grupa>
     </student>
     <student ID="7">
         <Nume>name</Nume>
