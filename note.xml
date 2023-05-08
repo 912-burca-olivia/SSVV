@@ -10,6 +10,11 @@
         <SaptamanaPredare>13</SaptamanaPredare>
         <Feedback>Ok</Feedback>
     </nota>
+    <nota IDStudent="15" IDTema="14">
+        <Nota>5.0</Nota>
+        <SaptamanaPredare>6</SaptamanaPredare>
+        <Feedback>ok</Feedback>
+    </nota>
     <nota IDStudent="1" IDTema="1">
         <Nota>10.0</Nota>
         <SaptamanaPredare>7</SaptamanaPredare>
@@ -19,6 +24,11 @@
         <Nota>7.5</Nota>
         <SaptamanaPredare>9</SaptamanaPredare>
         <Feedback>done</Feedback>
+    </nota>
+    <nota IDStudent="1" IDTema="14">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
+        <Feedback>ok</Feedback>
     </nota>
     <nota IDStudent="4000" IDTema="4000">
         <Nota>9.0</Nota>
@@ -30,9 +40,24 @@
         <SaptamanaPredare>8</SaptamanaPredare>
         <Feedback>Ok</Feedback>
     </nota>
+    <nota IDStudent="7" IDTema="1">
+        <Nota>1.0</Nota>
+        <SaptamanaPredare>100</SaptamanaPredare>
+        <Feedback>ok</Feedback>
+    </nota>
+    <nota IDStudent="7" IDTema="2">
+        <Nota>5.0</Nota>
+        <SaptamanaPredare>6</SaptamanaPredare>
+        <Feedback>ok</Feedback>
+    </nota>
     <nota IDStudent="14" IDTema="99">
         <Nota>9.0</Nota>
         <SaptamanaPredare>13</SaptamanaPredare>
+        <Feedback>Ok</Feedback>
+    </nota>
+    <nota IDStudent="4003" IDTema="40003">
+        <Nota>9.0</Nota>
+        <SaptamanaPredare>8</SaptamanaPredare>
         <Feedback>Ok</Feedback>
     </nota>
 </Entitati>
