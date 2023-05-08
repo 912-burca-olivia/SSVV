@@ -18,7 +18,7 @@ import ssvv.example.validation.Validator;
 
 import static org.junit.Assert.assertEquals;
 
-public class IncrementalTesting {
+public class IncrementalTest {
 
     @Mock
     private StudentXMLRepository studentRepo;
